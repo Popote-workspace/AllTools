@@ -10,11 +10,35 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CalculatorsRouteImport } from './routes/calculators'
+import { Route as ConvertersRouteImport } from './routes/converters'
+import { Route as KenyaToolsRouteImport } from './routes/kenya-tools'
+import { Route as ProductivityRouteImport } from './routes/productivity'
 import { Route as ToolsIndexRouteImport } from './routes/tools.index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorsRoute = CalculatorsRouteImport.update({
+  id: '/calculators',
+  path: '/calculators',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConvertersRoute = ConvertersRouteImport.update({
+  id: '/converters',
+  path: '/converters',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KenyaToolsRoute = KenyaToolsRouteImport.update({
+  id: '/kenya-tools',
+  path: '/kenya-tools',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductivityRoute = ProductivityRouteImport.update({
+  id: '/productivity',
+  path: '/productivity',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ToolsIndexRoute = ToolsIndexRouteImport.update({
@@ -25,27 +49,62 @@ const ToolsIndexRoute = ToolsIndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/calculators': typeof CalculatorsRoute
+  '/converters': typeof ConvertersRoute
+  '/kenya-tools': typeof KenyaToolsRoute
+  '/productivity': typeof ProductivityRoute
   '/tools/': typeof ToolsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/calculators': typeof CalculatorsRoute
+  '/converters': typeof ConvertersRoute
+  '/kenya-tools': typeof KenyaToolsRoute
+  '/productivity': typeof ProductivityRoute
   '/tools': typeof ToolsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/calculators': typeof CalculatorsRoute
+  '/converters': typeof ConvertersRoute
+  '/kenya-tools': typeof KenyaToolsRoute
+  '/productivity': typeof ProductivityRoute
   '/tools/': typeof ToolsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/tools/'
+  fullPaths:
+    | '/'
+    | '/calculators'
+    | '/converters'
+    | '/kenya-tools'
+    | '/productivity'
+    | '/tools/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/tools'
-  id: '__root__' | '/' | '/tools/'
+  to:
+    | '/'
+    | '/calculators'
+    | '/converters'
+    | '/kenya-tools'
+    | '/productivity'
+    | '/tools'
+  id:
+    | '__root__'
+    | '/'
+    | '/calculators'
+    | '/converters'
+    | '/kenya-tools'
+    | '/productivity'
+    | '/tools/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CalculatorsRoute: typeof CalculatorsRoute
+  ConvertersRoute: typeof ConvertersRoute
+  KenyaToolsRoute: typeof KenyaToolsRoute
+  ProductivityRoute: typeof ProductivityRoute
   ToolsIndexRoute: typeof ToolsIndexRoute
 }
 
@@ -56,6 +115,34 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculators': {
+      id: '/calculators'
+      path: '/calculators'
+      fullPath: '/calculators'
+      preLoaderRoute: typeof CalculatorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/converters': {
+      id: '/converters'
+      path: '/converters'
+      fullPath: '/converters'
+      preLoaderRoute: typeof ConvertersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kenya-tools': {
+      id: '/kenya-tools'
+      path: '/kenya-tools'
+      fullPath: '/kenya-tools'
+      preLoaderRoute: typeof KenyaToolsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/productivity': {
+      id: '/productivity'
+      path: '/productivity'
+      fullPath: '/productivity'
+      preLoaderRoute: typeof ProductivityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tools/': {
@@ -70,6 +157,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CalculatorsRoute: CalculatorsRoute,
+  ConvertersRoute: ConvertersRoute,
+  KenyaToolsRoute: KenyaToolsRoute,
+  ProductivityRoute: ProductivityRoute,
   ToolsIndexRoute: ToolsIndexRoute,
 }
 export const routeTree = rootRouteImport
