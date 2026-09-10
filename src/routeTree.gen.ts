@@ -20,6 +20,12 @@ import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ProductivityRouteImport } from './routes/productivity'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ToolsIndexRouteImport } from './routes/tools.index'
+import { Route as ToolsAcreHectareConverterRouteImport } from './routes/tools.acre-hectare-converter'
+import { Route as ToolsAgeCalculatorRouteImport } from './routes/tools.age-calculator'
+import { Route as ToolsLoanCalculatorRouteImport } from './routes/tools.loan-calculator'
+import { Route as ToolsPayeCalculatorRouteImport } from './routes/tools.paye-calculator'
+import { Route as ToolsPercentageCalculatorRouteImport } from './routes/tools.percentage-calculator'
+import { Route as ToolsSalaryCalculatorRouteImport } from './routes/tools.salary-calculator'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -76,6 +82,38 @@ const ToolsIndexRoute = ToolsIndexRouteImport.update({
   path: '/tools/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ToolsAcreHectareConverterRoute =
+  ToolsAcreHectareConverterRouteImport.update({
+    id: '/tools/acre-hectare-converter',
+    path: '/tools/acre-hectare-converter',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToolsAgeCalculatorRoute = ToolsAgeCalculatorRouteImport.update({
+  id: '/tools/age-calculator',
+  path: '/tools/age-calculator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsLoanCalculatorRoute = ToolsLoanCalculatorRouteImport.update({
+  id: '/tools/loan-calculator',
+  path: '/tools/loan-calculator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsPayeCalculatorRoute = ToolsPayeCalculatorRouteImport.update({
+  id: '/tools/paye-calculator',
+  path: '/tools/paye-calculator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsPercentageCalculatorRoute =
+  ToolsPercentageCalculatorRouteImport.update({
+    id: '/tools/percentage-calculator',
+    path: '/tools/percentage-calculator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToolsSalaryCalculatorRoute = ToolsSalaryCalculatorRouteImport.update({
+  id: '/tools/salary-calculator',
+  path: '/tools/salary-calculator',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -88,6 +126,12 @@ export interface FileRoutesByFullPath {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/productivity': typeof ProductivityRoute
   '/terms': typeof TermsRoute
+  '/tools/acre-hectare-converter': typeof ToolsAcreHectareConverterRoute
+  '/tools/age-calculator': typeof ToolsAgeCalculatorRoute
+  '/tools/loan-calculator': typeof ToolsLoanCalculatorRoute
+  '/tools/paye-calculator': typeof ToolsPayeCalculatorRoute
+  '/tools/percentage-calculator': typeof ToolsPercentageCalculatorRoute
+  '/tools/salary-calculator': typeof ToolsSalaryCalculatorRoute
   '/tools/': typeof ToolsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -101,6 +145,12 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/productivity': typeof ProductivityRoute
   '/terms': typeof TermsRoute
+  '/tools/acre-hectare-converter': typeof ToolsAcreHectareConverterRoute
+  '/tools/age-calculator': typeof ToolsAgeCalculatorRoute
+  '/tools/loan-calculator': typeof ToolsLoanCalculatorRoute
+  '/tools/paye-calculator': typeof ToolsPayeCalculatorRoute
+  '/tools/percentage-calculator': typeof ToolsPercentageCalculatorRoute
+  '/tools/salary-calculator': typeof ToolsSalaryCalculatorRoute
   '/tools': typeof ToolsIndexRoute
 }
 export interface FileRoutesById {
@@ -115,6 +165,12 @@ export interface FileRoutesById {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/productivity': typeof ProductivityRoute
   '/terms': typeof TermsRoute
+  '/tools/acre-hectare-converter': typeof ToolsAcreHectareConverterRoute
+  '/tools/age-calculator': typeof ToolsAgeCalculatorRoute
+  '/tools/loan-calculator': typeof ToolsLoanCalculatorRoute
+  '/tools/paye-calculator': typeof ToolsPayeCalculatorRoute
+  '/tools/percentage-calculator': typeof ToolsPercentageCalculatorRoute
+  '/tools/salary-calculator': typeof ToolsSalaryCalculatorRoute
   '/tools/': typeof ToolsIndexRoute
 }
 export interface FileRouteTypes {
@@ -130,6 +186,12 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/productivity'
     | '/terms'
+    | '/tools/acre-hectare-converter'
+    | '/tools/age-calculator'
+    | '/tools/loan-calculator'
+    | '/tools/paye-calculator'
+    | '/tools/percentage-calculator'
+    | '/tools/salary-calculator'
     | '/tools/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -143,6 +205,12 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/productivity'
     | '/terms'
+    | '/tools/acre-hectare-converter'
+    | '/tools/age-calculator'
+    | '/tools/loan-calculator'
+    | '/tools/paye-calculator'
+    | '/tools/percentage-calculator'
+    | '/tools/salary-calculator'
     | '/tools'
   id:
     | '__root__'
@@ -156,6 +224,12 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/productivity'
     | '/terms'
+    | '/tools/acre-hectare-converter'
+    | '/tools/age-calculator'
+    | '/tools/loan-calculator'
+    | '/tools/paye-calculator'
+    | '/tools/percentage-calculator'
+    | '/tools/salary-calculator'
     | '/tools/'
   fileRoutesById: FileRoutesById
 }
@@ -170,6 +244,12 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProductivityRoute: typeof ProductivityRoute
   TermsRoute: typeof TermsRoute
+  ToolsAcreHectareConverterRoute: typeof ToolsAcreHectareConverterRoute
+  ToolsAgeCalculatorRoute: typeof ToolsAgeCalculatorRoute
+  ToolsLoanCalculatorRoute: typeof ToolsLoanCalculatorRoute
+  ToolsPayeCalculatorRoute: typeof ToolsPayeCalculatorRoute
+  ToolsPercentageCalculatorRoute: typeof ToolsPercentageCalculatorRoute
+  ToolsSalaryCalculatorRoute: typeof ToolsSalaryCalculatorRoute
   ToolsIndexRoute: typeof ToolsIndexRoute
 }
 
@@ -252,6 +332,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ToolsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tools/acre-hectare-converter': {
+      id: '/tools/acre-hectare-converter'
+      path: '/tools/acre-hectare-converter'
+      fullPath: '/tools/acre-hectare-converter'
+      preLoaderRoute: typeof ToolsAcreHectareConverterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/age-calculator': {
+      id: '/tools/age-calculator'
+      path: '/tools/age-calculator'
+      fullPath: '/tools/age-calculator'
+      preLoaderRoute: typeof ToolsAgeCalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/loan-calculator': {
+      id: '/tools/loan-calculator'
+      path: '/tools/loan-calculator'
+      fullPath: '/tools/loan-calculator'
+      preLoaderRoute: typeof ToolsLoanCalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/paye-calculator': {
+      id: '/tools/paye-calculator'
+      path: '/tools/paye-calculator'
+      fullPath: '/tools/paye-calculator'
+      preLoaderRoute: typeof ToolsPayeCalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/percentage-calculator': {
+      id: '/tools/percentage-calculator'
+      path: '/tools/percentage-calculator'
+      fullPath: '/tools/percentage-calculator'
+      preLoaderRoute: typeof ToolsPercentageCalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/salary-calculator': {
+      id: '/tools/salary-calculator'
+      path: '/tools/salary-calculator'
+      fullPath: '/tools/salary-calculator'
+      preLoaderRoute: typeof ToolsSalaryCalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -266,6 +388,12 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProductivityRoute: ProductivityRoute,
   TermsRoute: TermsRoute,
+  ToolsAcreHectareConverterRoute: ToolsAcreHectareConverterRoute,
+  ToolsAgeCalculatorRoute: ToolsAgeCalculatorRoute,
+  ToolsLoanCalculatorRoute: ToolsLoanCalculatorRoute,
+  ToolsPayeCalculatorRoute: ToolsPayeCalculatorRoute,
+  ToolsPercentageCalculatorRoute: ToolsPercentageCalculatorRoute,
+  ToolsSalaryCalculatorRoute: ToolsSalaryCalculatorRoute,
   ToolsIndexRoute: ToolsIndexRoute,
 }
 export const routeTree = rootRouteImport
