@@ -37,10 +37,11 @@ export function Field({
 }: {
   label: string;
   htmlFor: string;
-  hint?: string;
-  error?: string;
+  hint?: string | undefined;
+  error?: string | undefined;
   children: ReactNode;
 }) {
+
   return (
     <div className="space-y-1.5">
       <label htmlFor={htmlFor} className="block text-sm font-medium text-foreground">
