@@ -22,6 +22,9 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ToolsIndexRouteImport } from './routes/tools.index'
 import { Route as ToolsAcreHectareConverterRouteImport } from './routes/tools.acre-hectare-converter'
 import { Route as ToolsAgeCalculatorRouteImport } from './routes/tools.age-calculator'
+import { Route as ToolsElectionCountdownRouteImport } from './routes/tools.election-countdown'
+import { Route as ToolsHouseConstructionCostCalculatorRouteImport } from './routes/tools.house-construction-cost-calculator'
+import { Route as ToolsKenyaFuelCostCalculatorRouteImport } from './routes/tools.kenya-fuel-cost-calculator'
 import { Route as ToolsLoanCalculatorRouteImport } from './routes/tools.loan-calculator'
 import { Route as ToolsPayeCalculatorRouteImport } from './routes/tools.paye-calculator'
 import { Route as ToolsPercentageCalculatorRouteImport } from './routes/tools.percentage-calculator'
@@ -93,6 +96,23 @@ const ToolsAgeCalculatorRoute = ToolsAgeCalculatorRouteImport.update({
   path: '/tools/age-calculator',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ToolsElectionCountdownRoute = ToolsElectionCountdownRouteImport.update({
+  id: '/tools/election-countdown',
+  path: '/tools/election-countdown',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsHouseConstructionCostCalculatorRoute =
+  ToolsHouseConstructionCostCalculatorRouteImport.update({
+    id: '/tools/house-construction-cost-calculator',
+    path: '/tools/house-construction-cost-calculator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToolsKenyaFuelCostCalculatorRoute =
+  ToolsKenyaFuelCostCalculatorRouteImport.update({
+    id: '/tools/kenya-fuel-cost-calculator',
+    path: '/tools/kenya-fuel-cost-calculator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ToolsLoanCalculatorRoute = ToolsLoanCalculatorRouteImport.update({
   id: '/tools/loan-calculator',
   path: '/tools/loan-calculator',
@@ -128,6 +148,9 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/tools/acre-hectare-converter': typeof ToolsAcreHectareConverterRoute
   '/tools/age-calculator': typeof ToolsAgeCalculatorRoute
+  '/tools/election-countdown': typeof ToolsElectionCountdownRoute
+  '/tools/house-construction-cost-calculator': typeof ToolsHouseConstructionCostCalculatorRoute
+  '/tools/kenya-fuel-cost-calculator': typeof ToolsKenyaFuelCostCalculatorRoute
   '/tools/loan-calculator': typeof ToolsLoanCalculatorRoute
   '/tools/paye-calculator': typeof ToolsPayeCalculatorRoute
   '/tools/percentage-calculator': typeof ToolsPercentageCalculatorRoute
@@ -147,6 +170,9 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/tools/acre-hectare-converter': typeof ToolsAcreHectareConverterRoute
   '/tools/age-calculator': typeof ToolsAgeCalculatorRoute
+  '/tools/election-countdown': typeof ToolsElectionCountdownRoute
+  '/tools/house-construction-cost-calculator': typeof ToolsHouseConstructionCostCalculatorRoute
+  '/tools/kenya-fuel-cost-calculator': typeof ToolsKenyaFuelCostCalculatorRoute
   '/tools/loan-calculator': typeof ToolsLoanCalculatorRoute
   '/tools/paye-calculator': typeof ToolsPayeCalculatorRoute
   '/tools/percentage-calculator': typeof ToolsPercentageCalculatorRoute
@@ -167,6 +193,9 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/tools/acre-hectare-converter': typeof ToolsAcreHectareConverterRoute
   '/tools/age-calculator': typeof ToolsAgeCalculatorRoute
+  '/tools/election-countdown': typeof ToolsElectionCountdownRoute
+  '/tools/house-construction-cost-calculator': typeof ToolsHouseConstructionCostCalculatorRoute
+  '/tools/kenya-fuel-cost-calculator': typeof ToolsKenyaFuelCostCalculatorRoute
   '/tools/loan-calculator': typeof ToolsLoanCalculatorRoute
   '/tools/paye-calculator': typeof ToolsPayeCalculatorRoute
   '/tools/percentage-calculator': typeof ToolsPercentageCalculatorRoute
@@ -188,6 +217,9 @@ export interface FileRouteTypes {
     | '/terms'
     | '/tools/acre-hectare-converter'
     | '/tools/age-calculator'
+    | '/tools/election-countdown'
+    | '/tools/house-construction-cost-calculator'
+    | '/tools/kenya-fuel-cost-calculator'
     | '/tools/loan-calculator'
     | '/tools/paye-calculator'
     | '/tools/percentage-calculator'
@@ -207,6 +239,9 @@ export interface FileRouteTypes {
     | '/terms'
     | '/tools/acre-hectare-converter'
     | '/tools/age-calculator'
+    | '/tools/election-countdown'
+    | '/tools/house-construction-cost-calculator'
+    | '/tools/kenya-fuel-cost-calculator'
     | '/tools/loan-calculator'
     | '/tools/paye-calculator'
     | '/tools/percentage-calculator'
@@ -226,6 +261,9 @@ export interface FileRouteTypes {
     | '/terms'
     | '/tools/acre-hectare-converter'
     | '/tools/age-calculator'
+    | '/tools/election-countdown'
+    | '/tools/house-construction-cost-calculator'
+    | '/tools/kenya-fuel-cost-calculator'
     | '/tools/loan-calculator'
     | '/tools/paye-calculator'
     | '/tools/percentage-calculator'
@@ -246,6 +284,9 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   ToolsAcreHectareConverterRoute: typeof ToolsAcreHectareConverterRoute
   ToolsAgeCalculatorRoute: typeof ToolsAgeCalculatorRoute
+  ToolsElectionCountdownRoute: typeof ToolsElectionCountdownRoute
+  ToolsHouseConstructionCostCalculatorRoute: typeof ToolsHouseConstructionCostCalculatorRoute
+  ToolsKenyaFuelCostCalculatorRoute: typeof ToolsKenyaFuelCostCalculatorRoute
   ToolsLoanCalculatorRoute: typeof ToolsLoanCalculatorRoute
   ToolsPayeCalculatorRoute: typeof ToolsPayeCalculatorRoute
   ToolsPercentageCalculatorRoute: typeof ToolsPercentageCalculatorRoute
@@ -346,6 +387,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ToolsAgeCalculatorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tools/election-countdown': {
+      id: '/tools/election-countdown'
+      path: '/tools/election-countdown'
+      fullPath: '/tools/election-countdown'
+      preLoaderRoute: typeof ToolsElectionCountdownRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/house-construction-cost-calculator': {
+      id: '/tools/house-construction-cost-calculator'
+      path: '/tools/house-construction-cost-calculator'
+      fullPath: '/tools/house-construction-cost-calculator'
+      preLoaderRoute: typeof ToolsHouseConstructionCostCalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/kenya-fuel-cost-calculator': {
+      id: '/tools/kenya-fuel-cost-calculator'
+      path: '/tools/kenya-fuel-cost-calculator'
+      fullPath: '/tools/kenya-fuel-cost-calculator'
+      preLoaderRoute: typeof ToolsKenyaFuelCostCalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tools/loan-calculator': {
       id: '/tools/loan-calculator'
       path: '/tools/loan-calculator'
@@ -390,6 +452,10 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   ToolsAcreHectareConverterRoute: ToolsAcreHectareConverterRoute,
   ToolsAgeCalculatorRoute: ToolsAgeCalculatorRoute,
+  ToolsElectionCountdownRoute: ToolsElectionCountdownRoute,
+  ToolsHouseConstructionCostCalculatorRoute:
+    ToolsHouseConstructionCostCalculatorRoute,
+  ToolsKenyaFuelCostCalculatorRoute: ToolsKenyaFuelCostCalculatorRoute,
   ToolsLoanCalculatorRoute: ToolsLoanCalculatorRoute,
   ToolsPayeCalculatorRoute: ToolsPayeCalculatorRoute,
   ToolsPercentageCalculatorRoute: ToolsPercentageCalculatorRoute,
