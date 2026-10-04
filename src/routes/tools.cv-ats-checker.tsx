@@ -229,7 +229,7 @@ function CvAtsPage() {
       disclaimer="This is a formatting and keyword readiness check. It does not assess your suitability for a role and does not guarantee any outcome."
     >
       <Card className="space-y-4">
-        <Notice tone="info">
+        <Notice tone="muted">
           Your CV is analysed locally in your browser. Nothing is uploaded, stored or shared.
         </Notice>
 
