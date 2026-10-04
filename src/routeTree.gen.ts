@@ -30,6 +30,7 @@ import { Route as ToolsHouseConstructionCostCalculatorRouteImport } from './rout
 import { Route as ToolsKenyaFuelCostCalculatorRouteImport } from './routes/tools.kenya-fuel-cost-calculator'
 import { Route as ToolsLoanCalculatorRouteImport } from './routes/tools.loan-calculator'
 import { Route as ToolsPayeCalculatorRouteImport } from './routes/tools.paye-calculator'
+import { Route as ToolsPdfToolsRouteImport } from './routes/tools.pdf-tools'
 import { Route as ToolsPercentageCalculatorRouteImport } from './routes/tools.percentage-calculator'
 import { Route as ToolsSalaryCalculatorRouteImport } from './routes/tools.salary-calculator'
 import { Route as ToolsUnitConverterRouteImport } from './routes/tools.unit-converter'
@@ -145,6 +146,11 @@ const ToolsPayeCalculatorRoute = ToolsPayeCalculatorRouteImport.update({
   path: '/tools/paye-calculator',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ToolsPdfToolsRoute = ToolsPdfToolsRouteImport.update({
+  id: '/tools/pdf-tools',
+  path: '/tools/pdf-tools',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ToolsPercentageCalculatorRoute =
   ToolsPercentageCalculatorRouteImport.update({
     id: '/tools/percentage-calculator',
@@ -188,6 +194,7 @@ export interface FileRoutesByFullPath {
   '/tools/kenya-fuel-cost-calculator': typeof ToolsKenyaFuelCostCalculatorRoute
   '/tools/loan-calculator': typeof ToolsLoanCalculatorRoute
   '/tools/paye-calculator': typeof ToolsPayeCalculatorRoute
+  '/tools/pdf-tools': typeof ToolsPdfToolsRoute
   '/tools/percentage-calculator': typeof ToolsPercentageCalculatorRoute
   '/tools/salary-calculator': typeof ToolsSalaryCalculatorRoute
   '/tools/unit-converter': typeof ToolsUnitConverterRoute
@@ -215,6 +222,7 @@ export interface FileRoutesByTo {
   '/tools/kenya-fuel-cost-calculator': typeof ToolsKenyaFuelCostCalculatorRoute
   '/tools/loan-calculator': typeof ToolsLoanCalculatorRoute
   '/tools/paye-calculator': typeof ToolsPayeCalculatorRoute
+  '/tools/pdf-tools': typeof ToolsPdfToolsRoute
   '/tools/percentage-calculator': typeof ToolsPercentageCalculatorRoute
   '/tools/salary-calculator': typeof ToolsSalaryCalculatorRoute
   '/tools/unit-converter': typeof ToolsUnitConverterRoute
@@ -243,6 +251,7 @@ export interface FileRoutesById {
   '/tools/kenya-fuel-cost-calculator': typeof ToolsKenyaFuelCostCalculatorRoute
   '/tools/loan-calculator': typeof ToolsLoanCalculatorRoute
   '/tools/paye-calculator': typeof ToolsPayeCalculatorRoute
+  '/tools/pdf-tools': typeof ToolsPdfToolsRoute
   '/tools/percentage-calculator': typeof ToolsPercentageCalculatorRoute
   '/tools/salary-calculator': typeof ToolsSalaryCalculatorRoute
   '/tools/unit-converter': typeof ToolsUnitConverterRoute
@@ -272,6 +281,7 @@ export interface FileRouteTypes {
     | '/tools/kenya-fuel-cost-calculator'
     | '/tools/loan-calculator'
     | '/tools/paye-calculator'
+    | '/tools/pdf-tools'
     | '/tools/percentage-calculator'
     | '/tools/salary-calculator'
     | '/tools/unit-converter'
@@ -299,6 +309,7 @@ export interface FileRouteTypes {
     | '/tools/kenya-fuel-cost-calculator'
     | '/tools/loan-calculator'
     | '/tools/paye-calculator'
+    | '/tools/pdf-tools'
     | '/tools/percentage-calculator'
     | '/tools/salary-calculator'
     | '/tools/unit-converter'
@@ -326,6 +337,7 @@ export interface FileRouteTypes {
     | '/tools/kenya-fuel-cost-calculator'
     | '/tools/loan-calculator'
     | '/tools/paye-calculator'
+    | '/tools/pdf-tools'
     | '/tools/percentage-calculator'
     | '/tools/salary-calculator'
     | '/tools/unit-converter'
@@ -354,6 +366,7 @@ export interface RootRouteChildren {
   ToolsKenyaFuelCostCalculatorRoute: typeof ToolsKenyaFuelCostCalculatorRoute
   ToolsLoanCalculatorRoute: typeof ToolsLoanCalculatorRoute
   ToolsPayeCalculatorRoute: typeof ToolsPayeCalculatorRoute
+  ToolsPdfToolsRoute: typeof ToolsPdfToolsRoute
   ToolsPercentageCalculatorRoute: typeof ToolsPercentageCalculatorRoute
   ToolsSalaryCalculatorRoute: typeof ToolsSalaryCalculatorRoute
   ToolsUnitConverterRoute: typeof ToolsUnitConverterRoute
@@ -510,6 +523,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ToolsPayeCalculatorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tools/pdf-tools': {
+      id: '/tools/pdf-tools'
+      path: '/tools/pdf-tools'
+      fullPath: '/tools/pdf-tools'
+      preLoaderRoute: typeof ToolsPdfToolsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tools/percentage-calculator': {
       id: '/tools/percentage-calculator'
       path: '/tools/percentage-calculator'
@@ -563,6 +583,7 @@ const rootRouteChildren: RootRouteChildren = {
   ToolsKenyaFuelCostCalculatorRoute: ToolsKenyaFuelCostCalculatorRoute,
   ToolsLoanCalculatorRoute: ToolsLoanCalculatorRoute,
   ToolsPayeCalculatorRoute: ToolsPayeCalculatorRoute,
+  ToolsPdfToolsRoute: ToolsPdfToolsRoute,
   ToolsPercentageCalculatorRoute: ToolsPercentageCalculatorRoute,
   ToolsSalaryCalculatorRoute: ToolsSalaryCalculatorRoute,
   ToolsUnitConverterRoute: ToolsUnitConverterRoute,
