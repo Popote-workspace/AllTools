@@ -284,7 +284,8 @@ export function CompressPdf() {
           ? await lossless(buf)
           : await rasterize(buf, LEVELS[level].scale, LEVELS[level].quality);
       setResult({ name: `${baseName(file)}-compressed.pdf`, url: makeUrl(bytes), size: bytes.length });
-    } catch {
+    } catch (e) {
+      console.error("PDF compress failed", e);
       setError(READ_ERROR);
     } finally {
       setBusy(false);
