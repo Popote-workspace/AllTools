@@ -5,23 +5,23 @@ import { pageHead, softwareAppJsonLd } from "@/lib/seo";
 import { getTool } from "@/data/tools";
 import { ToolPage } from "@/components/ToolPage";
 import { Button, Card, Notice } from "@/components/kit";
+import { CompressPdf, SplitPdf } from "@/components/PdfSplitCompress";
 
 const tool = getTool("pdf-tools");
 
-const COMING_SOON = ["Split PDF", "Compress PDF", "PDF to images", "Images to PDF"];
 
 const FAQS = [
   {
     q: "Are my PDFs uploaded?",
-    a: "No. Merging happens entirely in your browser. Your files never leave your device.",
+    a: "No. Merging, splitting and compressing happen entirely in your browser. Your files never leave your device.",
   },
   {
     q: "Is there a file size limit?",
     a: "Only your device's memory. Very large files (hundreds of MB) may be slow on phones.",
   },
   {
-    q: "Why do some tools say Coming soon?",
-    a: "We only switch on a tool when it works reliably in the browser. The others are being built.",
+    q: "How does compression work?",
+    a: "Light mode rebuilds the file more efficiently without touching quality. Medium and Strong turn each page into a compressed image — great for scans, but text stops being selectable.",
   },
   {
     q: "Can I merge password-protected PDFs?",
@@ -32,9 +32,9 @@ const FAQS = [
 export const Route = createFileRoute("/tools/pdf-tools")({
   head: () =>
     pageHead({
-      title: "Merge PDF Files Free — PDF Tools",
+      title: "Merge, Split & Compress PDF Free — PDF Tools",
       description:
-        "Merge several PDF files into one, privately in your browser. No uploads, no sign-up. More PDF tools coming soon.",
+        "Merge, split and compress PDF files privately in your browser. No uploads, no sign-up.",
       path: "/tools/pdf-tools",
       jsonLd: softwareAppJsonLd(tool.name, tool.description, "/tools/pdf-tools"),
     }),
@@ -105,7 +105,7 @@ function PdfToolsPage() {
   return (
     <ToolPage
       tool={tool}
-      intro="Combine several PDF files into one document, in the order you choose — privately, in your browser."
+      intro="Merge, split and compress PDF files — privately, in your browser."
       howItWorks={
         <p>
           Your files are read on your device, their pages are copied in order into a new PDF, and you
@@ -193,17 +193,8 @@ function PdfToolsPage() {
         </div>
       </Card>
 
-      <Card className="mt-4">
-        <h2 className="text-lg font-semibold">More PDF tools</h2>
-        <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-          {COMING_SOON.map((name) => (
-            <li key={name} className="flex items-center justify-between rounded-md bg-muted p-3 text-sm">
-              {name}
-              <span className="rounded bg-background px-2 py-0.5 text-xs text-muted-foreground">Coming soon</span>
-            </li>
-          ))}
-        </ul>
-      </Card>
+      <SplitPdf />
+      <CompressPdf />
     </ToolPage>
   );
 }
