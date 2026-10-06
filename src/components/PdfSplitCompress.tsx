@@ -260,7 +260,7 @@ export function CompressPdf() {
       canvas.height = Math.ceil(vp.height);
       ctx.fillStyle = "#ffffff";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      await page.render({ canvasContext: ctx, viewport: vp, canvas }).promise;
+      await page.render({ canvasContext: ctx, viewport: vp }).promise;
       const blob = await new Promise<Blob | null>((r) => canvas.toBlob(r, "image/jpeg", quality));
       if (!blob) throw new Error("encode failed");
       const img = await out.embedJpg(await blob.arrayBuffer());
