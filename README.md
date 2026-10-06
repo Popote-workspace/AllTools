@@ -4,7 +4,7 @@ Free, fast, privacy-friendly online tools for Kenya and beyond. Every calculator
 
 ## Tools (15)
 
-Acre ↔ Hectare Converter · Percentage Calculator · Age Calculator · Loan Calculator · Kenya PAYE Calculator · Salary Calculator · House Construction Cost Calculator · Car Import Duty Calculator · CV ATS Checker · Election Countdown · Unit Converter · Word Counter · PDF Tools (merge works; split/compress marked "Coming soon") · Kenya Fuel Cost Calculator · Date Difference Calculator
+Acre ↔ Hectare Converter · Percentage Calculator · Age Calculator · Loan Calculator · Kenya PAYE Calculator · Salary Calculator · House Construction Cost Calculator · Car Import Duty Calculator · CV ATS Checker · Election Countdown · Unit Converter · Word Counter · PDF Tools (merge, split, compress) · Kenya Fuel Cost Calculator · Date Difference Calculator
 
 ## Stack
 
@@ -45,5 +45,5 @@ This project is built on TanStack Start, which by default produces a server-rend
 ## Limitations
 
 - Tax and import-duty figures are estimates; always confirm with KRA.
-- PDF split/compress/convert are not yet implemented.
+- PDF compression Medium/Strong rasterises pages (text no longer selectable); PDF↔image conversion not implemented.
 - Business-day counts exclude weekends only, not public holidays.
