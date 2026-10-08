@@ -1,10 +1,6 @@
 # AllTools — Netlify configuration
-# Note: this project uses TanStack Start. See README "Deployment" for build output details.
+# TanStack Start is deployed through @netlify/vite-plugin-tanstack-start (see vite.config.ts):
+# the client build is published from dist/client and SSR + server functions run as a Netlify Function.
 [build]
   command = "npm run build"
   publish = "dist/client"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
