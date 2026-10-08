@@ -40,7 +40,14 @@ Every page has its own title, description, canonical link, Open Graph tags and J
 
 ## Deployment
 
-This project is built on TanStack Start, which by default produces a server-rendered build. `netlify.toml` is included with an SPA fallback, but verify the build output directory (`dist/client`) on first deploy; for a pure static host you may need to enable prerendering/SPA mode in `vite.config.ts`. No environment variables or secrets are required.
+Deployed to **Netlify** through Netlify's official TanStack Start integration, `@netlify/vite-plugin-tanstack-start` (installed as a dev dependency and added in `vite.config.ts`, where Nitro is switched off so only one server build is produced).
+
+- `npm run build` writes the browser build to `dist/client` (Netlify's publish directory) and the server bundle to `dist/server`, then emits the function handler at `.netlify/v1/functions/server.mjs` with `path: "/*"` and `preferStatic: true`.
+- `netlify.toml` only sets the build command and publish directory: `command = "npm run build"`, `publish = "dist/client"`.
+- SSR, server routes and server functions run as a Netlify Function; static files are served first. Because the function answers every path, **no SPA fallback redirect is needed** — adding `/*` → `/index.html` would shadow the function and break deep links and the 404 page.
+- No environment variables, secrets or paid services are required. Ads and analytics stay disabled in `src/config/site.ts`.
+- Checked locally by running the built function handler and requesting real paths: `/`, `/tools/paye-calculator`, `/tools/pdf-tools` and `/contact` return 200 with server-rendered HTML, and an unknown path returns 404.
+
 
 ## Limitations
 

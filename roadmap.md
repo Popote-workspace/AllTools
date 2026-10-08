@@ -1,7 +1,8 @@
 # Roadmap
 
-## Now
-- [ ] Fix Netlify deployment config for TanStack Start using @netlify/vite-plugin-tanstack-start so `npm run build` produces Netlify-compatible output (today: "Deploy directory 'dist/client' does not exist"). Must not change the 15 tools, UI, routes, SEO, content or functionality. No paid services. Verify build, then ready to push to GitHub.
+## Done
+- [x] Netlify deployment fixed with @netlify/vite-plugin-tanstack-start (nitro off). `npm run build` now outputs `dist/client` plus a Netlify Function; verified by running the built handler against real paths.
+
 
 ## Waiting on user
 - [ ] Contact page shows a placeholder email (hello@alltools.example) — needs the real address.
