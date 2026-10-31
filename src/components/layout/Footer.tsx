@@ -5,7 +5,11 @@ import { Logo } from "./Header";
 const BROWSE = [
   { to: "/tools", label: "All Tools" },
   { to: "/calculators", label: "Calculators" },
+  { to: "/finance", label: "Finance" },
   { to: "/converters", label: "Converters" },
+  { to: "/images", label: "Images & Design" },
+  { to: "/time", label: "Time & Calendars" },
+  { to: "/utilities", label: "Security & Utilities" },
   { to: "/kenya-tools", label: "Kenya Tools" },
   { to: "/productivity", label: "Productivity" },
 ] as const;
