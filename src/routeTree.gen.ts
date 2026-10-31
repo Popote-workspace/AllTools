@@ -15,10 +15,14 @@ import { Route as CalculatorsRouteImport } from './routes/calculators'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConvertersRouteImport } from './routes/converters'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
+import { Route as FinanceRouteImport } from './routes/finance'
+import { Route as ImagesRouteImport } from './routes/images'
 import { Route as KenyaToolsRouteImport } from './routes/kenya-tools'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ProductivityRouteImport } from './routes/productivity'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TimeRouteImport } from './routes/time'
+import { Route as UtilitiesRouteImport } from './routes/utilities'
 import { Route as ToolsIndexRouteImport } from './routes/tools.index'
 import { Route as ToolsAcreHectareConverterRouteImport } from './routes/tools.acre-hectare-converter'
 import { Route as ToolsAgeCalculatorRouteImport } from './routes/tools.age-calculator'
@@ -66,6 +70,16 @@ const DisclaimerRoute = DisclaimerRouteImport.update({
   path: '/disclaimer',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FinanceRoute = FinanceRouteImport.update({
+  id: '/finance',
+  path: '/finance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImagesRoute = ImagesRouteImport.update({
+  id: '/images',
+  path: '/images',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KenyaToolsRoute = KenyaToolsRouteImport.update({
   id: '/kenya-tools',
   path: '/kenya-tools',
@@ -84,6 +98,16 @@ const ProductivityRoute = ProductivityRouteImport.update({
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TimeRoute = TimeRouteImport.update({
+  id: '/time',
+  path: '/time',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UtilitiesRoute = UtilitiesRouteImport.update({
+  id: '/utilities',
+  path: '/utilities',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ToolsIndexRoute = ToolsIndexRouteImport.update({
@@ -180,10 +204,14 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/converters': typeof ConvertersRoute
   '/disclaimer': typeof DisclaimerRoute
+  '/finance': typeof FinanceRoute
+  '/images': typeof ImagesRoute
   '/kenya-tools': typeof KenyaToolsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/productivity': typeof ProductivityRoute
   '/terms': typeof TermsRoute
+  '/time': typeof TimeRoute
+  '/utilities': typeof UtilitiesRoute
   '/tools/acre-hectare-converter': typeof ToolsAcreHectareConverterRoute
   '/tools/age-calculator': typeof ToolsAgeCalculatorRoute
   '/tools/car-import-duty-calculator': typeof ToolsCarImportDutyCalculatorRoute
@@ -208,10 +236,14 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/converters': typeof ConvertersRoute
   '/disclaimer': typeof DisclaimerRoute
+  '/finance': typeof FinanceRoute
+  '/images': typeof ImagesRoute
   '/kenya-tools': typeof KenyaToolsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/productivity': typeof ProductivityRoute
   '/terms': typeof TermsRoute
+  '/time': typeof TimeRoute
+  '/utilities': typeof UtilitiesRoute
   '/tools/acre-hectare-converter': typeof ToolsAcreHectareConverterRoute
   '/tools/age-calculator': typeof ToolsAgeCalculatorRoute
   '/tools/car-import-duty-calculator': typeof ToolsCarImportDutyCalculatorRoute
@@ -237,10 +269,14 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/converters': typeof ConvertersRoute
   '/disclaimer': typeof DisclaimerRoute
+  '/finance': typeof FinanceRoute
+  '/images': typeof ImagesRoute
   '/kenya-tools': typeof KenyaToolsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/productivity': typeof ProductivityRoute
   '/terms': typeof TermsRoute
+  '/time': typeof TimeRoute
+  '/utilities': typeof UtilitiesRoute
   '/tools/acre-hectare-converter': typeof ToolsAcreHectareConverterRoute
   '/tools/age-calculator': typeof ToolsAgeCalculatorRoute
   '/tools/car-import-duty-calculator': typeof ToolsCarImportDutyCalculatorRoute
@@ -267,10 +303,14 @@ export interface FileRouteTypes {
     | '/contact'
     | '/converters'
     | '/disclaimer'
+    | '/finance'
+    | '/images'
     | '/kenya-tools'
     | '/privacy-policy'
     | '/productivity'
     | '/terms'
+    | '/time'
+    | '/utilities'
     | '/tools/acre-hectare-converter'
     | '/tools/age-calculator'
     | '/tools/car-import-duty-calculator'
@@ -295,10 +335,14 @@ export interface FileRouteTypes {
     | '/contact'
     | '/converters'
     | '/disclaimer'
+    | '/finance'
+    | '/images'
     | '/kenya-tools'
     | '/privacy-policy'
     | '/productivity'
     | '/terms'
+    | '/time'
+    | '/utilities'
     | '/tools/acre-hectare-converter'
     | '/tools/age-calculator'
     | '/tools/car-import-duty-calculator'
@@ -323,10 +367,14 @@ export interface FileRouteTypes {
     | '/contact'
     | '/converters'
     | '/disclaimer'
+    | '/finance'
+    | '/images'
     | '/kenya-tools'
     | '/privacy-policy'
     | '/productivity'
     | '/terms'
+    | '/time'
+    | '/utilities'
     | '/tools/acre-hectare-converter'
     | '/tools/age-calculator'
     | '/tools/car-import-duty-calculator'
@@ -352,10 +400,14 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ConvertersRoute: typeof ConvertersRoute
   DisclaimerRoute: typeof DisclaimerRoute
+  FinanceRoute: typeof FinanceRoute
+  ImagesRoute: typeof ImagesRoute
   KenyaToolsRoute: typeof KenyaToolsRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProductivityRoute: typeof ProductivityRoute
   TermsRoute: typeof TermsRoute
+  TimeRoute: typeof TimeRoute
+  UtilitiesRoute: typeof UtilitiesRoute
   ToolsAcreHectareConverterRoute: typeof ToolsAcreHectareConverterRoute
   ToolsAgeCalculatorRoute: typeof ToolsAgeCalculatorRoute
   ToolsCarImportDutyCalculatorRoute: typeof ToolsCarImportDutyCalculatorRoute
@@ -418,6 +470,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DisclaimerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/finance': {
+      id: '/finance'
+      path: '/finance'
+      fullPath: '/finance'
+      preLoaderRoute: typeof FinanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/images': {
+      id: '/images'
+      path: '/images'
+      fullPath: '/images'
+      preLoaderRoute: typeof ImagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kenya-tools': {
       id: '/kenya-tools'
       path: '/kenya-tools'
@@ -444,6 +510,20 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/time': {
+      id: '/time'
+      path: '/time'
+      fullPath: '/time'
+      preLoaderRoute: typeof TimeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/utilities': {
+      id: '/utilities'
+      path: '/utilities'
+      fullPath: '/utilities'
+      preLoaderRoute: typeof UtilitiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tools/': {
@@ -568,10 +648,14 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ConvertersRoute: ConvertersRoute,
   DisclaimerRoute: DisclaimerRoute,
+  FinanceRoute: FinanceRoute,
+  ImagesRoute: ImagesRoute,
   KenyaToolsRoute: KenyaToolsRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProductivityRoute: ProductivityRoute,
   TermsRoute: TermsRoute,
+  TimeRoute: TimeRoute,
+  UtilitiesRoute: UtilitiesRoute,
   ToolsAcreHectareConverterRoute: ToolsAcreHectareConverterRoute,
   ToolsAgeCalculatorRoute: ToolsAgeCalculatorRoute,
   ToolsCarImportDutyCalculatorRoute: ToolsCarImportDutyCalculatorRoute,
