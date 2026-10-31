@@ -7,8 +7,12 @@ const NAV = [
   { to: "/", label: "Home" },
   { to: "/tools", label: "All Tools" },
   { to: "/calculators", label: "Calculators" },
+  { to: "/finance", label: "Finance" },
   { to: "/converters", label: "Converters" },
-  { to: "/kenya-tools", label: "Kenya Tools" },
+  { to: "/images", label: "Images" },
+  { to: "/time", label: "Time" },
+  { to: "/utilities", label: "Utilities" },
+  { to: "/kenya-tools", label: "Kenya" },
   { to: "/productivity", label: "Productivity" },
 ] as const;
 
@@ -37,15 +41,15 @@ export function Header() {
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Logo />
 
-        <nav aria-label="Main" className="hidden md:block">
-          <ul className="flex items-center gap-1">
+        <nav aria-label="Main" className="hidden lg:block">
+          <ul className="flex items-center gap-0.5">
             {NAV.map((item) => (
               <li key={item.to}>
                 <Link
                   to={item.to}
                   activeOptions={{ exact: item.to === "/" }}
                   activeProps={{ className: "bg-accent text-accent-foreground" }}
-                  className="inline-flex min-h-9 items-center rounded-md px-3 text-sm font-medium text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className="inline-flex min-h-9 items-center rounded-md px-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
                   {item.label}
                 </Link>
@@ -56,7 +60,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex size-11 items-center justify-center rounded-md text-foreground hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
+          className="inline-flex size-11 items-center justify-center rounded-md text-foreground hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -67,7 +71,7 @@ export function Header() {
       </div>
 
       {open ? (
-        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-border md:hidden">
+        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-border lg:hidden">
           <ul className="mx-auto w-full max-w-6xl px-4 py-2">
             {NAV.map((item) => (
               <li key={item.to}>
