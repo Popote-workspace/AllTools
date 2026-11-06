@@ -31,11 +31,14 @@ import { Route as ToolsCvAtsCheckerRouteImport } from './routes/tools.cv-ats-che
 import { Route as ToolsDateDifferenceCalculatorRouteImport } from './routes/tools.date-difference-calculator'
 import { Route as ToolsElectionCountdownRouteImport } from './routes/tools.election-countdown'
 import { Route as ToolsHouseConstructionCostCalculatorRouteImport } from './routes/tools.house-construction-cost-calculator'
+import { Route as ToolsImageCompressorRouteImport } from './routes/tools.image-compressor'
 import { Route as ToolsKenyaFuelCostCalculatorRouteImport } from './routes/tools.kenya-fuel-cost-calculator'
 import { Route as ToolsLoanCalculatorRouteImport } from './routes/tools.loan-calculator'
+import { Route as ToolsPasswordGeneratorRouteImport } from './routes/tools.password-generator'
 import { Route as ToolsPayeCalculatorRouteImport } from './routes/tools.paye-calculator'
 import { Route as ToolsPdfToolsRouteImport } from './routes/tools.pdf-tools'
 import { Route as ToolsPercentageCalculatorRouteImport } from './routes/tools.percentage-calculator'
+import { Route as ToolsQrCodeGeneratorRouteImport } from './routes/tools.qr-code-generator'
 import { Route as ToolsSalaryCalculatorRouteImport } from './routes/tools.salary-calculator'
 import { Route as ToolsUnitConverterRouteImport } from './routes/tools.unit-converter'
 import { Route as ToolsWordCounterRouteImport } from './routes/tools.word-counter'
@@ -154,6 +157,11 @@ const ToolsHouseConstructionCostCalculatorRoute =
     path: '/tools/house-construction-cost-calculator',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ToolsImageCompressorRoute = ToolsImageCompressorRouteImport.update({
+  id: '/tools/image-compressor',
+  path: '/tools/image-compressor',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ToolsKenyaFuelCostCalculatorRoute =
   ToolsKenyaFuelCostCalculatorRouteImport.update({
     id: '/tools/kenya-fuel-cost-calculator',
@@ -163,6 +171,11 @@ const ToolsKenyaFuelCostCalculatorRoute =
 const ToolsLoanCalculatorRoute = ToolsLoanCalculatorRouteImport.update({
   id: '/tools/loan-calculator',
   path: '/tools/loan-calculator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsPasswordGeneratorRoute = ToolsPasswordGeneratorRouteImport.update({
+  id: '/tools/password-generator',
+  path: '/tools/password-generator',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ToolsPayeCalculatorRoute = ToolsPayeCalculatorRouteImport.update({
@@ -181,6 +194,11 @@ const ToolsPercentageCalculatorRoute =
     path: '/tools/percentage-calculator',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ToolsQrCodeGeneratorRoute = ToolsQrCodeGeneratorRouteImport.update({
+  id: '/tools/qr-code-generator',
+  path: '/tools/qr-code-generator',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ToolsSalaryCalculatorRoute = ToolsSalaryCalculatorRouteImport.update({
   id: '/tools/salary-calculator',
   path: '/tools/salary-calculator',
@@ -219,11 +237,14 @@ export interface FileRoutesByFullPath {
   '/tools/date-difference-calculator': typeof ToolsDateDifferenceCalculatorRoute
   '/tools/election-countdown': typeof ToolsElectionCountdownRoute
   '/tools/house-construction-cost-calculator': typeof ToolsHouseConstructionCostCalculatorRoute
+  '/tools/image-compressor': typeof ToolsImageCompressorRoute
   '/tools/kenya-fuel-cost-calculator': typeof ToolsKenyaFuelCostCalculatorRoute
   '/tools/loan-calculator': typeof ToolsLoanCalculatorRoute
+  '/tools/password-generator': typeof ToolsPasswordGeneratorRoute
   '/tools/paye-calculator': typeof ToolsPayeCalculatorRoute
   '/tools/pdf-tools': typeof ToolsPdfToolsRoute
   '/tools/percentage-calculator': typeof ToolsPercentageCalculatorRoute
+  '/tools/qr-code-generator': typeof ToolsQrCodeGeneratorRoute
   '/tools/salary-calculator': typeof ToolsSalaryCalculatorRoute
   '/tools/unit-converter': typeof ToolsUnitConverterRoute
   '/tools/word-counter': typeof ToolsWordCounterRoute
@@ -251,11 +272,14 @@ export interface FileRoutesByTo {
   '/tools/date-difference-calculator': typeof ToolsDateDifferenceCalculatorRoute
   '/tools/election-countdown': typeof ToolsElectionCountdownRoute
   '/tools/house-construction-cost-calculator': typeof ToolsHouseConstructionCostCalculatorRoute
+  '/tools/image-compressor': typeof ToolsImageCompressorRoute
   '/tools/kenya-fuel-cost-calculator': typeof ToolsKenyaFuelCostCalculatorRoute
   '/tools/loan-calculator': typeof ToolsLoanCalculatorRoute
+  '/tools/password-generator': typeof ToolsPasswordGeneratorRoute
   '/tools/paye-calculator': typeof ToolsPayeCalculatorRoute
   '/tools/pdf-tools': typeof ToolsPdfToolsRoute
   '/tools/percentage-calculator': typeof ToolsPercentageCalculatorRoute
+  '/tools/qr-code-generator': typeof ToolsQrCodeGeneratorRoute
   '/tools/salary-calculator': typeof ToolsSalaryCalculatorRoute
   '/tools/unit-converter': typeof ToolsUnitConverterRoute
   '/tools/word-counter': typeof ToolsWordCounterRoute
@@ -284,11 +308,14 @@ export interface FileRoutesById {
   '/tools/date-difference-calculator': typeof ToolsDateDifferenceCalculatorRoute
   '/tools/election-countdown': typeof ToolsElectionCountdownRoute
   '/tools/house-construction-cost-calculator': typeof ToolsHouseConstructionCostCalculatorRoute
+  '/tools/image-compressor': typeof ToolsImageCompressorRoute
   '/tools/kenya-fuel-cost-calculator': typeof ToolsKenyaFuelCostCalculatorRoute
   '/tools/loan-calculator': typeof ToolsLoanCalculatorRoute
+  '/tools/password-generator': typeof ToolsPasswordGeneratorRoute
   '/tools/paye-calculator': typeof ToolsPayeCalculatorRoute
   '/tools/pdf-tools': typeof ToolsPdfToolsRoute
   '/tools/percentage-calculator': typeof ToolsPercentageCalculatorRoute
+  '/tools/qr-code-generator': typeof ToolsQrCodeGeneratorRoute
   '/tools/salary-calculator': typeof ToolsSalaryCalculatorRoute
   '/tools/unit-converter': typeof ToolsUnitConverterRoute
   '/tools/word-counter': typeof ToolsWordCounterRoute
@@ -318,11 +345,14 @@ export interface FileRouteTypes {
     | '/tools/date-difference-calculator'
     | '/tools/election-countdown'
     | '/tools/house-construction-cost-calculator'
+    | '/tools/image-compressor'
     | '/tools/kenya-fuel-cost-calculator'
     | '/tools/loan-calculator'
+    | '/tools/password-generator'
     | '/tools/paye-calculator'
     | '/tools/pdf-tools'
     | '/tools/percentage-calculator'
+    | '/tools/qr-code-generator'
     | '/tools/salary-calculator'
     | '/tools/unit-converter'
     | '/tools/word-counter'
@@ -350,11 +380,14 @@ export interface FileRouteTypes {
     | '/tools/date-difference-calculator'
     | '/tools/election-countdown'
     | '/tools/house-construction-cost-calculator'
+    | '/tools/image-compressor'
     | '/tools/kenya-fuel-cost-calculator'
     | '/tools/loan-calculator'
+    | '/tools/password-generator'
     | '/tools/paye-calculator'
     | '/tools/pdf-tools'
     | '/tools/percentage-calculator'
+    | '/tools/qr-code-generator'
     | '/tools/salary-calculator'
     | '/tools/unit-converter'
     | '/tools/word-counter'
@@ -382,11 +415,14 @@ export interface FileRouteTypes {
     | '/tools/date-difference-calculator'
     | '/tools/election-countdown'
     | '/tools/house-construction-cost-calculator'
+    | '/tools/image-compressor'
     | '/tools/kenya-fuel-cost-calculator'
     | '/tools/loan-calculator'
+    | '/tools/password-generator'
     | '/tools/paye-calculator'
     | '/tools/pdf-tools'
     | '/tools/percentage-calculator'
+    | '/tools/qr-code-generator'
     | '/tools/salary-calculator'
     | '/tools/unit-converter'
     | '/tools/word-counter'
@@ -415,11 +451,14 @@ export interface RootRouteChildren {
   ToolsDateDifferenceCalculatorRoute: typeof ToolsDateDifferenceCalculatorRoute
   ToolsElectionCountdownRoute: typeof ToolsElectionCountdownRoute
   ToolsHouseConstructionCostCalculatorRoute: typeof ToolsHouseConstructionCostCalculatorRoute
+  ToolsImageCompressorRoute: typeof ToolsImageCompressorRoute
   ToolsKenyaFuelCostCalculatorRoute: typeof ToolsKenyaFuelCostCalculatorRoute
   ToolsLoanCalculatorRoute: typeof ToolsLoanCalculatorRoute
+  ToolsPasswordGeneratorRoute: typeof ToolsPasswordGeneratorRoute
   ToolsPayeCalculatorRoute: typeof ToolsPayeCalculatorRoute
   ToolsPdfToolsRoute: typeof ToolsPdfToolsRoute
   ToolsPercentageCalculatorRoute: typeof ToolsPercentageCalculatorRoute
+  ToolsQrCodeGeneratorRoute: typeof ToolsQrCodeGeneratorRoute
   ToolsSalaryCalculatorRoute: typeof ToolsSalaryCalculatorRoute
   ToolsUnitConverterRoute: typeof ToolsUnitConverterRoute
   ToolsWordCounterRoute: typeof ToolsWordCounterRoute
@@ -582,6 +621,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ToolsHouseConstructionCostCalculatorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tools/image-compressor': {
+      id: '/tools/image-compressor'
+      path: '/tools/image-compressor'
+      fullPath: '/tools/image-compressor'
+      preLoaderRoute: typeof ToolsImageCompressorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tools/kenya-fuel-cost-calculator': {
       id: '/tools/kenya-fuel-cost-calculator'
       path: '/tools/kenya-fuel-cost-calculator'
@@ -594,6 +640,13 @@ declare module '@tanstack/react-router' {
       path: '/tools/loan-calculator'
       fullPath: '/tools/loan-calculator'
       preLoaderRoute: typeof ToolsLoanCalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/password-generator': {
+      id: '/tools/password-generator'
+      path: '/tools/password-generator'
+      fullPath: '/tools/password-generator'
+      preLoaderRoute: typeof ToolsPasswordGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tools/paye-calculator': {
@@ -615,6 +668,13 @@ declare module '@tanstack/react-router' {
       path: '/tools/percentage-calculator'
       fullPath: '/tools/percentage-calculator'
       preLoaderRoute: typeof ToolsPercentageCalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/qr-code-generator': {
+      id: '/tools/qr-code-generator'
+      path: '/tools/qr-code-generator'
+      fullPath: '/tools/qr-code-generator'
+      preLoaderRoute: typeof ToolsQrCodeGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tools/salary-calculator': {
@@ -664,11 +724,14 @@ const rootRouteChildren: RootRouteChildren = {
   ToolsElectionCountdownRoute: ToolsElectionCountdownRoute,
   ToolsHouseConstructionCostCalculatorRoute:
     ToolsHouseConstructionCostCalculatorRoute,
+  ToolsImageCompressorRoute: ToolsImageCompressorRoute,
   ToolsKenyaFuelCostCalculatorRoute: ToolsKenyaFuelCostCalculatorRoute,
   ToolsLoanCalculatorRoute: ToolsLoanCalculatorRoute,
+  ToolsPasswordGeneratorRoute: ToolsPasswordGeneratorRoute,
   ToolsPayeCalculatorRoute: ToolsPayeCalculatorRoute,
   ToolsPdfToolsRoute: ToolsPdfToolsRoute,
   ToolsPercentageCalculatorRoute: ToolsPercentageCalculatorRoute,
+  ToolsQrCodeGeneratorRoute: ToolsQrCodeGeneratorRoute,
   ToolsSalaryCalculatorRoute: ToolsSalaryCalculatorRoute,
   ToolsUnitConverterRoute: ToolsUnitConverterRoute,
   ToolsWordCounterRoute: ToolsWordCounterRoute,
