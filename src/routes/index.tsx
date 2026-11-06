@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Search, Check } from "lucide-react";
 import { pageHead, faqJsonLd } from "@/lib/seo";
-import { TOOLS, toolsByCategory, searchTools } from "@/data/tools";
+import { CATEGORIES, TOOLS, toolsByCategory, searchTools } from "@/data/tools";
 import { ToolGrid } from "@/components/ToolCard";
 import { FaqList } from "@/components/ToolPage";
 import { TopAdSlot, BottomAdSlot } from "@/components/AdSlot";
@@ -46,7 +46,16 @@ function Section({
 }: {
   title: string;
   description: string;
-  to: "/calculators" | "/converters" | "/kenya-tools" | "/productivity" | "/tools";
+  to:
+    | "/calculators"
+    | "/converters"
+    | "/kenya-tools"
+    | "/productivity"
+    | "/tools"
+    | "/finance"
+    | "/images"
+    | "/time"
+    | "/utilities";
   tools: readonly (typeof TOOLS)[number][];
 }) {
   return (
@@ -71,7 +80,8 @@ function HomePage() {
   const [query, setQuery] = useState("");
   const results = useMemo(() => (query.trim() ? searchTools(query).slice(0, 6) : []), [query]);
 
-  const popular = TOOLS.filter((t) => "popular" in t && t.popular);
+  const popular = TOOLS.filter((t) => "popular" in t && t.popular).slice(0, 9);
+  const newTools = TOOLS.filter((t) => "new" in t && t.new).slice(0, 6);
 
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-8">
@@ -132,29 +142,36 @@ function HomePage() {
         tools={popular}
       />
       <Section
+        title="New tools"
+        description="The latest additions to AllTools."
+        to="/tools"
+        tools={newTools}
+      />
+      <Section
         title="Kenya tools"
         description="Built around Kenyan salaries, land, vehicles and fuel."
         to="/kenya-tools"
         tools={toolsByCategory("kenya")}
       />
-      <Section
-        title="Calculators"
-        description="Everyday maths, money and date calculations."
-        to="/calculators"
-        tools={toolsByCategory("calculators")}
-      />
-      <Section
-        title="Converters"
-        description="Switch between units and land measurements."
-        to="/converters"
-        tools={toolsByCategory("converters")}
-      />
-      <Section
-        title="Productivity"
-        description="Writing, documents and job application helpers."
-        to="/productivity"
-        tools={toolsByCategory("productivity")}
-      />
+
+      <section className="mt-10">
+        <h2 className="text-xl font-bold text-foreground">Browse by category</h2>
+        <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {CATEGORIES.map((c) => (
+            <li key={c.id}>
+              <Link
+                to={c.to}
+                className="flex min-h-14 items-center justify-between gap-2 rounded-lg border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground hover:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                <span>{c.label}</span>
+                <span className="text-xs font-medium text-muted-foreground">
+                  {toolsByCategory(c.id).length} tools
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <section className="mt-12">
         <h2 className="text-xl font-bold text-foreground">Why AllTools?</h2>
