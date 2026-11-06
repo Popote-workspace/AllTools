@@ -12,7 +12,14 @@ export function ToolCard({ tool }: { tool: Tool }) {
           <Icon className="size-5" aria-hidden />
         </span>
         <div className="min-w-0">
-          <h3 className="text-base font-semibold text-foreground">{tool.name}</h3>
+          <h3 className="text-base font-semibold text-foreground">
+            {tool.name}
+            {"new" in tool && tool.new ? (
+              <span className="ml-2 inline-flex rounded-full bg-primary px-2 py-0.5 align-middle text-[10px] font-bold uppercase tracking-wide text-primary-foreground">
+                New
+              </span>
+            ) : null}
+          </h3>
           <p className="mt-0.5 text-xs text-muted-foreground">
             {tool.categories.map((c) => categoryLabel(c as CategoryId)).join(" · ")}
           </p>
