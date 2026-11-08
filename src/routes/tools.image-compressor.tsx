@@ -12,7 +12,7 @@ const tool = getTool("image-compressor");
 const PATH = "/tools/image-compressor";
 const MAX_FILES = 10;
 
-type Item = { id: string; file: File; src: string; out?: { blob: Blob; url: string; type: OutputType }; error?: string };
+type Item = { id: string; file: File; src: string; out?: { blob: Blob; url: string; type: OutputType }; error?: string | undefined };
 
 const FAQS = [
   { q: "Are my images uploaded?", a: "No. Compression happens in your browser using the HTML canvas. Your photos never leave your device." },
