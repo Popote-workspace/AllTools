@@ -104,10 +104,10 @@ function CompressorPage() {
         "Use 70–80% quality for websites and social media.",
         "Convert PNG photos to WebP for the smallest files that still look sharp.",
         "If the result isn't smaller, the original was already well optimised — keep it.",
-        "Need smaller dimensions too? Use the Image Resizer first.",
+        "Resize large images in an image editor first when you need specific dimensions, then compress them here.",
       ]}
       faqs={FAQS}
-      related={["image-resizer", "image-converter", "pdf-tools"]}
+      related={["qr-code-generator", "pdf-tools", "unit-converter"]}
     >
       <Card className="space-y-5">
         <ImageDropzone multiple onFiles={add} hint={`JPG, PNG or WebP · up to 10 MB each · max ${MAX_FILES} images`} />

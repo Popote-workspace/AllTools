@@ -185,7 +185,7 @@ function QrPage() {
         "Shorter content makes a simpler, easier-to-scan code.",
       ]}
       faqs={FAQS}
-      related={["password-generator", "image-resizer", "word-counter"]}
+      related={["password-generator", "image-compressor", "word-counter"]}
     >
       <Card className="space-y-5">
         <div role="tablist" aria-label="QR code type" className="flex flex-wrap gap-2">

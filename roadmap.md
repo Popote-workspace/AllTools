@@ -1,6 +1,7 @@
 # Roadmap
 
 ## In progress — AllTools 2.0: add 15 new tools (30 total)
+- [x] Fix preview startup and invalid related-tool links before continuing the new tools rollout
 - [ ] Shared foundation: register 15 new tools + categories (finance, images, time, utilities) in src/data/tools.ts; new category pages; header/footer/homepage updates
 - [ ] Batch 1: QR Code Generator, Password Generator, Image Compressor, Image Resizer, Image Format Converter
 - [ ] Batch 2: Currency Converter, BMI Calculator, Mortgage Calculator, Compound Interest Calculator, Discount & Sales Tax Calculator

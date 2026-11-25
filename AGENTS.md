@@ -14,6 +14,8 @@
 - Netlify is the deploy target: `@netlify/vite-plugin-tanstack-start` in `vite.config.ts` produces the
   Netlify output (client build in `dist/client`, SSR + server functions as a Netlify Function).
   Keep `nitro: false` — a second server build target would emit a conflicting bundle for the same deploy.
+- Load the Netlify plugin only for production builds; local config evaluation must avoid its Cache API shim,
+  which conflicts with the preview host's Window global.
 - Routing is answered by the server function, not by a static SPA fallback. Do not add a `/*` redirect
   to `netlify.toml`; it shadows the function and breaks SSR, deep links and 404s.
 - Verify any deploy change by running the build and importing the generated function handler
