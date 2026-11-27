@@ -7,7 +7,7 @@
 - [ ] Group C: business name ideas, local shift scheduler with CSV export, and local expense tracker with filters and CSV export
 - [ ] Add per-route SEO metadata and focused calculation tests; preserve existing robots and deploy configuration
 - [ ] Build and functionally verify each group, recheck original tools and the three unfinished tools, then verify mobile layout and Netlify output
-- [ ] Keep homepage styling unchanged until the user answers whether to follow the screenshot
+- [x] Keep the existing homepage colors and layout unchanged, as requested.
 
 ## Done
 - [x] Netlify deployment fixed with `@netlify/vite-plugin-tanstack-start`; baseline production build emits `dist/client` and the Netlify Function.
