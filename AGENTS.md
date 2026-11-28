@@ -21,3 +21,7 @@
 - Verify any deploy change by running the build and importing the generated function handler
   (`.netlify/v1/functions/server.mjs`) to fetch real paths — a green build alone does not prove deploy works.
 
+## Business & Money tools
+
+- Business & Money uses one route per tool backed by shared client-side document, calculation, and productivity modules; this keeps each page independently discoverable while reusing privacy-preserving logic.
+

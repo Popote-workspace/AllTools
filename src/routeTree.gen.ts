@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as BusinessMoneyRouteImport } from './routes/business-money'
 import { Route as CalculatorsRouteImport } from './routes/calculators'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConvertersRouteImport } from './routes/converters'
@@ -51,6 +52,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BusinessMoneyRoute = BusinessMoneyRouteImport.update({
+  id: '/business-money',
+  path: '/business-money',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CalculatorsRoute = CalculatorsRouteImport.update({
@@ -218,6 +224,7 @@ const ToolsWordCounterRoute = ToolsWordCounterRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/business-money': typeof BusinessMoneyRoute
   '/calculators': typeof CalculatorsRoute
   '/contact': typeof ContactRoute
   '/converters': typeof ConvertersRoute
@@ -253,6 +260,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/business-money': typeof BusinessMoneyRoute
   '/calculators': typeof CalculatorsRoute
   '/contact': typeof ContactRoute
   '/converters': typeof ConvertersRoute
@@ -289,6 +297,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/business-money': typeof BusinessMoneyRoute
   '/calculators': typeof CalculatorsRoute
   '/contact': typeof ContactRoute
   '/converters': typeof ConvertersRoute
@@ -326,6 +335,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/business-money'
     | '/calculators'
     | '/contact'
     | '/converters'
@@ -361,6 +371,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/business-money'
     | '/calculators'
     | '/contact'
     | '/converters'
@@ -396,6 +407,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/business-money'
     | '/calculators'
     | '/contact'
     | '/converters'
@@ -432,6 +444,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BusinessMoneyRoute: typeof BusinessMoneyRoute
   CalculatorsRoute: typeof CalculatorsRoute
   ContactRoute: typeof ContactRoute
   ConvertersRoute: typeof ConvertersRoute
@@ -479,6 +492,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/business-money': {
+      id: '/business-money'
+      path: '/business-money'
+      fullPath: '/business-money'
+      preLoaderRoute: typeof BusinessMoneyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calculators': {
@@ -704,6 +724,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BusinessMoneyRoute: BusinessMoneyRoute,
   CalculatorsRoute: CalculatorsRoute,
   ContactRoute: ContactRoute,
   ConvertersRoute: ConvertersRoute,

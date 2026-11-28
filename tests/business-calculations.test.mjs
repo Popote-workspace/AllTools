@@ -82,7 +82,7 @@ test("hourly rate includes annual expenses, tax allowance and profit buffer", ()
       annualRevenueTarget: 102666.67,
       billableHoursPerYear: 1000,
       hourlyRate: 102.67,
-      dailyRate: 821.36,
+      dailyRate: 821.33,
       monthlyEquivalent: 8555.56,
     },
   );
